@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "type": "scripts", "module",
+  "type": "module",
   "repository": {
-	"type": "git",
+    "type": "git",
     "url": "git+https://github.com/Skeler667/frontend-project-lvl1.git"
   },
   "author": "",
