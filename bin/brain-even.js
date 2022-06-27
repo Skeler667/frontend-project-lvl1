@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import name from '../src/cli.js';
 import readlineSync from 'readline-sync';
-
+let userName
 console.log('node bin/brain-games.js');
 console.log('Welcome to the Brain Games!');
 name();
@@ -21,7 +21,7 @@ const getEven = (variant) => {
 	}else if (getRandomNumb % 2 !== 0 && variant == 'no') {
 		console.log('Correct!')
 	}else {
-		console.log(`'${variant}' is wrong answer ;(. Correct answer was 'no'.Let's try again,`);
+		console.log(`'${variant}' is wrong answer ;(. Correct answer was 'no'.Let's try again, ${userName}`);
 	}
 }
 getEven(variant);
