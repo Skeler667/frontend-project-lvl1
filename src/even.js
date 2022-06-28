@@ -25,7 +25,7 @@ for (let i = 0; i < roundsCount; i += 1) {
   }
   };
   getEven(userAnswer);
-if (i == 2){
+if (i == 2 && userAnswer == rightAnswer){
   console.log(`Congratulations, ${userName}!`)
 }
 }
