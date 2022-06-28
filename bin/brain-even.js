@@ -13,15 +13,18 @@ const getRandomNumb = (max) => {
 // вывод вопроса с рандомным числом.
 console.log(`Question: ${getRandomNumb()}`);
 // ответ на вопрос с рандомным числом.
-let variant = readlineSync.question('Your answer: ');
+let userAnswer = readlineSync.question('Your answer: ');
 // функция проверки и вывод результата рандомного числа.
-const getEven = (variant) => {
-	if (getRandomNumb % 2 == 0 && variant == 'yes') {
-		console.log('Correct!')
-	}else if (getRandomNumb % 2 !== 0 && variant == 'no') {
-		console.log('Correct!')
-	}else {
-		console.log(`'${variant}' is wrong answer ;(. Correct answer was 'no'.Let's try again, ${userName}`);
-	}
-}
-getEven(variant);
+const isNumberEven = (number) => number % 2 === 0;
+
+const rightAnswer = isNumberEven(getRandomNumb) ? 'yes' : 'no';
+
+const getEven = (userAnswer) => {
+if (userAnswer.toLowerCase() === rightAnswer.toLowerCase()) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${rightAnswer}'.\nLet's try again, '${userName}!'`);
+      return;
+    }
+};
+getEven(userAnswer);
