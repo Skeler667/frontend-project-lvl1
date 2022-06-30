@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { getNumber } from '../random/randomNumb.js';
 
 const gameEngine = (rules, roundGame) => {
   console.log('Welcome to the Brain Games!');
@@ -9,7 +10,7 @@ const gameEngine = (rules, roundGame) => {
   const roundsCount = 3;
 
   for (let i = 0; i < roundsCount; i += 1) {
-   const [task, rightAnswer] = roundGame[i];
+    let task = getNumber();
     console.log(`Question: ${task}`);
     const getEven = (userAnswer) => {
       if (userAnswer.toLowerCase() === rightAnswer.toLowerCase()) {
