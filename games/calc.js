@@ -1,4 +1,4 @@
-import readlineSync from 'readline-sync';
+
 import { gameEngine } from '../src/index.js';
 
-gameEngine();
+gameEngine(rules, 3, getRandomNumber, isEven);
