@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-import { brainEven } from '../src/even.js';
+import { rules, gameEngine } from '../games/even.js';
+gameEngine();
