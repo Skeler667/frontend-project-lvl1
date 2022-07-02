@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-import { gameEngine } from '../games/even.js';
+import { gameEngine } from '../src/index.js';
 gameEngine();
