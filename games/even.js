@@ -6,15 +6,13 @@ const getEven = (userAnswer, task) => {
 		console.log('Correct!');
 		return true;
 	}
-	console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '{rightAnswer}'.\nLet's try again, '!'`);
+	console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${rightAnswer}'.\nLet's try again, '${userAnswer}!'`);
 	return false;
 };
-
+let roundGame = 3;
 let task = getNumber();
-
-    const isNumberEven = () => task % 2 === 0;
+  const isNumberEven = () => task % 2 === 0;
   const rightAnswer = isNumberEven(task) ? 'yes' : 'no';
-
 let rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-gameEngine(rules, 3, getNumber, getEven, isNumberEven, rightAnswer, task);
+gameEngine(rules, roundGame[rightAnswer, task]);
 export { gameEngine };
