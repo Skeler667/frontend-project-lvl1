@@ -9,6 +9,7 @@ const getEven = (userAnswer, task) => {
 	console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${rightAnswer}'.\nLet's try again, '${userAnswer}!'`);
 	return false;
 };
+let roundGame = 3;
 let task = getNumber();
   const isNumberEven = () => task % 2 === 0;
   const rightAnswer = isNumberEven(task) ? 'yes' : 'no';
