@@ -10,7 +10,11 @@ const getEven = (userAnswer, task) => {
 	return false;
 };
 
+let task = getNumber();
+
+    const isNumberEven = () => task % 2 === 0;
+  const rightAnswer = isNumberEven(task) ? 'yes' : 'no';
 
 let rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-gameEngine(rules, 3, getNumber, getEven);
+gameEngine(rules, 3, getNumber, getEven, isNumberEven, rightAnswer, task);
 export { gameEngine };

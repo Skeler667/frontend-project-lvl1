@@ -10,11 +10,9 @@ const gameEngine = (rules, roundGame) => {
   const roundsCount = 3;
   let getRightCount = 0;
   for (let i = 0; i < roundsCount; i += 1) {
-    let task = getNumber();
-    console.log(`Question: ${task}`);
+  console.log(`Question: ${task}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    const isNumberEven = () => task % 2 === 0;
-  const rightAnswer = isNumberEven(task) ? 'yes' : 'no';
+
     const getEven = (userAnswer) => {
       if (userAnswer.toLowerCase() === rightAnswer.toLowerCase()) {
         console.log('Correct!');
