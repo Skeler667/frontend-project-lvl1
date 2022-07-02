@@ -12,5 +12,5 @@ const getEven = (userAnswer, task) => {
 
 
 let rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-gameEngine(rules, 3, getNumber, getEven());
+gameEngine(rules, 3, getNumber, getEven);
 export { gameEngine };

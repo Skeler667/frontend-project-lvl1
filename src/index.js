@@ -6,7 +6,7 @@ const gameEngine = (rules, roundGame) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hi ${userName}!`);
   console.log(`${rules}`);
-
+  
   const roundsCount = 3;
   let getRightCount = 0;
   for (let i = 0; i < roundsCount; i += 1) {
@@ -22,7 +22,7 @@ const gameEngine = (rules, roundGame) => {
         console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${rightAnswer}'.\nLet's try again, '${userName}!'`);
       }
     };
-    // getEven(userAnswer, task);
+    getEven(userAnswer, task);
     if (userAnswer[i] == rightAnswer[i]) {
       getRightCount = getRightCount += 1;
     }
