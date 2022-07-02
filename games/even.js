@@ -1,16 +1,16 @@
-
-import { getRandomNumber } from '../random/randomNumb.js';
+import { getNumber } from '../random/randomNumb.js';
 import { gameEngine } from '../src/index.js';
 
-
-const isEven = (number, answer) => {
-	if((answer==='yes' && number%2===0) || (answer==='no' && number%2!==0)){
-		console.log('RIGHT!');
+const getEven = (userAnswer, task) => {
+	if((userAnswer==='yes' && getNumber%2===0) || (userAnswer==='no' && getNumber%2!==0)){
+		console.log('Correct!');
 		return true;
 	}
-	console.log('NO');
+	console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '{rightAnswer}'.\nLet's try again, '!'`);
 	return false;
 };
 
+
 let rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-gameEngine(rules, 3, getRandomNumber, isEven);
+gameEngine(rules, 3, getNumber, getEven());
+export { gameEngine };
