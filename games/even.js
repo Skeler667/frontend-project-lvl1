@@ -3,7 +3,7 @@ import { gameEngine } from '../src/index.js';
 
 
 	let task = console.log(`Question: ${getNumber()}`);
-	let getResult = () => task % 2 === 0;
+	
 	let rightAnswer = getResult(task) ? 'yes' : 'no';
 	rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
