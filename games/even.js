@@ -1,7 +1,13 @@
 import { getNumber } from '../random/randomNumb.js';
 import { gameEngine } from '../src/index.js';
 
-const getEven = (userAnswer, task) => {
+
+	let task = console.log(`Question: ${getNumber()}`);
+	let getResult = () => task % 2 === 0;
+	let rightAnswer = getResult(task) ? 'yes' : 'no';
+	rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const getResult = (userAnswer, task) => {
 	if((userAnswer==='yes' && getNumber%2===0) || (userAnswer==='no' && getNumber%2!==0)){
 		console.log('Correct!');
 		return true;
@@ -9,10 +15,5 @@ const getEven = (userAnswer, task) => {
 	console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${rightAnswer}'.\nLet's try again, '${userAnswer}!'`);
 	return false;
 };
-let roundGame = 3;
-let task = getNumber();
-  const isNumberEven = () => task % 2 === 0;
-  const rightAnswer = isNumberEven(task) ? 'yes' : 'no';
-let rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-gameEngine(rules, roundGame[rightAnswer, task]);
+gameEngine(rules, rightAnswer, task, getResult);
 export { gameEngine };
