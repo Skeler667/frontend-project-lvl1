@@ -1,19 +1,12 @@
-import { getNumber } from '../random/randomNumb.js';
-import { gameEngine } from '../src/index.js';
+import getNumber from '../random/randomNumb.js';
+import gameEngine from '../src/index.js';
 
-
-	let task = console.log(`Question: ${getNumber()}`);
-	
-	let rightAnswer = getResult(task) ? 'yes' : 'no';
-	rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-
-const getResult = (userAnswer, task) => {
-	if((userAnswer==='yes' && getNumber%2===0) || (userAnswer==='no' && getNumber%2!==0)){
-		console.log('Correct!');
-		return true;
-	}
-	console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${rightAnswer}'.\nLet's try again, '${userAnswer}!'`);
-	return false;
+const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const isEven = (number) => number % 2 === 0;
+const isFinishedGameData = () => {
+  const question = getNumber(1, 50);
+  const rightAnswer = isEven(question) ? 'yes' : 'no';
+  return [question, rightAnswer];
 };
-gameEngine(rules, rightAnswer, task, getResult);
-export { gameEngine };
+const startBrainEven = gameEngine(rules, isFinishedGameData);
+export default startBrainEven;
