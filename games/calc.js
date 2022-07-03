@@ -12,13 +12,13 @@ const calc = (firstNumb, operator, secondNumb) => {
     case '*':
       return firstNumb * secondNumb;
     default:
-      throw new Error(`Unkown operator: '${operator}'!`);
+      console.log(`Unkown operator: '${operator}'!`);
   }
 };
 
 const isFinishedGameData = () => {
-  const firstNumb = getNumber();
-  const secondNumb = getNumber();
+  const firstNumb = getNumber(1, 50);
+  const secondNumb = getNumber(1, 50);
   const randomOperator = operators[getNumber(0, operators.length - 1)];
   const question = `${firstNumb} ${randomOperator} ${secondNumb}`;
   const rightAnswer = String(calc(firstNumb, randomOperator, secondNumb));
