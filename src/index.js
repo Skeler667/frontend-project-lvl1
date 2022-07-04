@@ -13,7 +13,7 @@ const gameEngine = (rules, getGameData) => {
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer.toLowerCase() === rightAnswer.toLowerCase()) {
+    if (userAnswer === rightAnswer) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer :(. Correct answer was '${rightAnswer}'.\nLet's try again, '${userName}!'`);
