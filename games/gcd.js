@@ -1,7 +1,7 @@
 import getNumber from '../random/randomNumb.js';
 import gameEngine from '../src/index.js';
 
-const rules = 'asdasdasdasdasdasd';
+const rules = 'Find the greatest common divisor of given numbers.';
 const calculateGCD = (firstNumber, secondNumber) => {
   if (secondNumber === 0) {
     return firstNumber;
