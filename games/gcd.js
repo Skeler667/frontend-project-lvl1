@@ -15,7 +15,7 @@ const prepareGameData = () => {
   const firstNumber = getNumber(1, 50);
   const secondNumber = getNumber(1, 50);
   const question = `${firstNumber} ${secondNumber}`;
-  const rightAnswer = calculateGCD(firstNumber, secondNumber);
+  const rightAnswer = `${calculateGCD(firstNumber, secondNumber)}`;
   return [question, rightAnswer];
 };
 
