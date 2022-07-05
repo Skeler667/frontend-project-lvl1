@@ -23,20 +23,16 @@ const generateProgression = (startNum, step, hidden, n) => {
   return progression;
 };
 
+const prepareGameData = () => {
+  const startNum = getNumber(1, 10);
+  const step = getNumber(1, 20);
+  const n = 10;
+  const hidden = getNumber(1, n);
 
-
-  const prepareGameData = () => {
-    const startNum = getNumber(1, 10);
-    const step = getNumber(1, 20);
-    const n = 10;
-    const hidden = getNumber(1, n);
-
-    const answer = `${findProgressionMember(startNum, step, hidden)}`;
-    const question = generateProgression(startNum, step, hidden, n);
-    return [question, answer];
-  };
-
-
+  const answer = `${findProgressionMember(startNum, step, hidden)}`;
+  const question = generateProgression(startNum, step, hidden, n);
+  return [question, answer];
+};
 
 const startBrainProgression = gameEngine(rules, prepareGameData);
 export default startBrainProgression;

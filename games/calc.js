@@ -12,7 +12,7 @@ const calc = (firstNumb, operator, secondNumb) => {
     case '*':
       return firstNumb * secondNumb;
     default:
-      console.log(`Unkown operator: '${operator}'!`);
+      throw new Error(`Unkown operator: '${operator}'!`);
   }
 };
 
