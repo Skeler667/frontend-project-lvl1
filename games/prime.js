@@ -3,18 +3,18 @@ import gameEngine from '../src/index.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-
-const prime = () =>{
-for (let i = 2; i < question; i++) {
-  if (question % i == 0) {
+let num = getNumber(1, 50);
+const isPrime = (num) =>{
+for (let i = 2; i < num; i++) {
+  if (num % i === 0) {
     return false;
   }
-  return true;
+  return num > 1;
 };
 
 const isFinishedGameData = () => {
-  const question = getNumber(1, 50);
-  const rightAnswer = prime(question) ? 'yes' : 'no';
+  const question = num;
+  const rightAnswer = prime(num) ? 'yes' : 'no';
   return [question, rightAnswer];
 };
 
