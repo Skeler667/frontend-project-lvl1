@@ -34,5 +34,7 @@ const prepareGameData = () => {
   return [question, answer];
 };
 
-const startBrainProgression = gameEngine(rules, prepareGameData);
+const startBrainProgression = () => {
+  gameEngine(rules, prepareGameData);
+};
 export default startBrainProgression;

@@ -19,5 +19,7 @@ const prepareGameData = () => {
   return [question, rightAnswer];
 };
 
-const startBrainGcd = gameEngine(rules, prepareGameData);
+const startBrainGcd = () => {
+  gameEngine(rules, prepareGameData);
+};
 export default startBrainGcd;

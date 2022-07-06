@@ -16,7 +16,7 @@ const calc = (firstNumb, operator, secondNumb) => {
   }
 };
 
-const isFinishedGameData = () => {
+const prepareGameData = () => {
   const firstNumb = getRandomNumber(1, 50);
   const secondNumb = getRandomNumber(1, 50);
   const randomOperator = operators[getRandomNumber(0, operators.length - 1)];
@@ -25,5 +25,7 @@ const isFinishedGameData = () => {
   return [question, rightAnswer];
 };
 
-const startBrainCalc = gameEngine(rules, isFinishedGameData);
+const startBrainCalc = () => {
+  gameEngine(rules, prepareGameData);
+};
 export default startBrainCalc;

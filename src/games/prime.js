@@ -12,12 +12,13 @@ const isPrime = (number) => {
   return number > 1;
 };
 
-const isFinishedGameData = () => {
+const prepareGameData = () => {
   const number = getRandomNumber(2, 100);
   const rightAnswer = isPrime(number) ? 'yes' : 'no';
   return [number, rightAnswer];
 };
 
-const startBrainPrime = gameEngine(rules, isFinishedGameData);
-
+const startBrainPrime = () => {
+  gameEngine(rules, prepareGameData);
+};
 export default startBrainPrime;
