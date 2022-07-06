@@ -1,4 +1,4 @@
-import getNumber from '../randomNumb.js';
+import getRandomNumber from '../utilites.js';
 import gameEngine from '../index.js';
 
 const rules = 'What number is missing in this progression?';
@@ -24,10 +24,10 @@ const generateProgression = (startNum, step, hidden, n) => {
 };
 
 const prepareGameData = () => {
-  const startNum = getNumber(1, 10);
-  const step = getNumber(1, 20);
+  const startNum = getRandomNumber(1, 10);
+  const step = getRandomNumber(1, 20);
   const n = 10;
-  const hidden = getNumber(1, n);
+  const hidden = getRandomNumber(1, n);
 
   const answer = `${findProgressionMember(startNum, step, hidden)}`;
   const question = generateProgression(startNum, step, hidden, n);
