@@ -1,25 +1,30 @@
-import getRandomNumber from '../utilites.js';
-import gameEngine from '../index.js';
+import { getRandomNumber } from '../utilites.js';
+import run from '../index.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
-const calculateGCD = (firstNumber, secondNumber) => {
-  if (secondNumber === 0) {
-    return firstNumber;
+
+const getRightAnwser = (num1, num2) => {
+  let result = 1;
+  if (num1 === num2) return num1;
+  const greatestNumber = num1 > num2 ? num1 : num2;
+  for (let i = greatestNumber - 1; i > 1; i -= 1) {
+    if (num1 % i === 0 && num2 % i === 0) {
+      result = i;
+      break;
+    }
   }
-  if (secondNumber > firstNumber) {
-    return calculateGCD(secondNumber, firstNumber);
-  }
-  return calculateGCD(secondNumber, firstNumber % secondNumber);
-};
-const prepareGameData = () => {
-  const firstNumber = getRandomNumber(1, 50);
-  const secondNumber = getRandomNumber(1, 50);
-  const question = `${firstNumber} ${secondNumber}`;
-  const rightAnswer = `${calculateGCD(firstNumber, secondNumber)}`;
-  return [question, rightAnswer];
+  return result;
 };
 
-const startBrainGcd = () => {
-  gameEngine(rules, prepareGameData);
+const prepareData = () => {
+  const nubmerOne = getRandomNumber(1, 100);
+  const numberTwo = getRandomNumber(1, 100);
+  const exercise = `${nubmerOne} ${numberTwo}`;
+  const rightAnswer = getRightAnwser(nubmerOne, numberTwo).toString();
+
+  return [exercise, rightAnswer];
 };
-export default startBrainGcd;
+
+const gameGcd = () => run(rules, prepareData);
+
+export default gameGcd;

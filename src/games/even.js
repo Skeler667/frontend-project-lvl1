@@ -1,5 +1,5 @@
-import getRandomNumber from '../utilites.js';
-import gameEngine from '../index.js';
+import { getRandomNumber } from '../utilites.js';
+import run from '../index.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 const isEven = (number) => number % 2 === 0;
@@ -9,6 +9,6 @@ const prepareGameData = () => {
   return [question, rightAnswer];
 };
 const startBrainEven = () => {
-  gameEngine(rules, prepareGameData);
+  run(rules, prepareGameData);
 };
 export default startBrainEven;

@@ -1,5 +1,5 @@
-import getRandomNumber from '../utilites.js';
-import gameEngine from '../index.js';
+import { getRandomNumber } from '../utilites.js';
+import run from '../index.js';
 
 const rules = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
@@ -26,6 +26,6 @@ const prepareGameData = () => {
 };
 
 const startBrainCalc = () => {
-  gameEngine(rules, prepareGameData);
+  run(rules, prepareGameData);
 };
 export default startBrainCalc;
