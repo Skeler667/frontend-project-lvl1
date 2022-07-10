@@ -18,7 +18,7 @@ const prepareGameData = () => {
   return [number, rightAnswer];
 };
 
-const startBrainPrime = () => {
+const gamePrime = () => {
   run(rules, prepareGameData);
 };
-export default startBrainPrime;
+export default gamePrime;
