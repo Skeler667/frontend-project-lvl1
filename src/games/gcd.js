@@ -1,9 +1,9 @@
-import getRandomNumber from '../utilites.js';
+import { getRandomNumber } from '../utilites.js';
 import run from '../index.js';
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const rule = 'Find the greatest common divisor of given numbers.';
 
-const getRightAnwser = (num1, num2) => {
+const findGCD = (num1, num2) => {
   let result = 1;
   if (num1 === num2) return num1;
   const greatestNumber = num1 > num2 ? num1 : num2;
@@ -16,15 +16,20 @@ const getRightAnwser = (num1, num2) => {
   return result;
 };
 
-const prepareData = () => {
-  const nubmerOne = getRandomNumber(1, 100);
-  const numberTwo = getRandomNumber(1, 100);
-  const exercise = `${nubmerOne} ${numberTwo}`;
-  const rightAnswer = getRightAnwser(nubmerOne, numberTwo).toString();
+const minNumberOne = 1;
+const maxNumberOne = 100;
+const minNumberTwo = 1;
+const maxNumberTwo = 100;
 
-  return [exercise, rightAnswer];
+const getGameGCD = () => {
+  const nubmerOne = getRandomNumber(minNumberOne, maxNumberOne);
+  const numberTwo = getRandomNumber(minNumberTwo, maxNumberTwo);
+  const question = `${nubmerOne} ${numberTwo}`;
+  const rightAnswer = findGCD(nubmerOne, numberTwo).toString();
+
+  return [question, rightAnswer];
 };
 
-const gameGcd = () => run(rules, prepareData);
+const gameGcd = () => run(rule, getGameGCD);
 
 export default gameGcd;

@@ -1,12 +1,19 @@
-import getRandomNumber from '../utilites.js';
+import { getRandomNumber } from '../utilites.js';
 import run from '../index.js';
 
-const rules = 'What number is missing in the progression?';
+const rule = 'What number is missing in the progression?';
+
+const minLength = 6;
+const maxLength = 10;
+const minStart = 1;
+const maxStart = 50;
+const minStep = 1;
+const maxStep = 7;
 
 const getRightAnwser = () => {
-  const lenght = getRandomNumber(7, 10);
-  const step = getRandomNumber(2, 5);
-  const firstNumber = getRandomNumber(1, 100);
+  const lenght = getRandomNumber(minLength, maxLength);
+  const step = getRandomNumber(minStep, maxStep);
+  const firstNumber = getRandomNumber(minStart, maxStart);
   const result = [firstNumber];
   const hiddenPosition = getRandomNumber(1, lenght);
   for (let i = 0; i < lenght; i += 1) {
@@ -18,7 +25,7 @@ const getRightAnwser = () => {
 };
 
 const gameProgression = () => {
-  run(rules, getRightAnwser);
+  run(rule, getRightAnwser);
 };
 
 export default gameProgression;

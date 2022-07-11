@@ -1,31 +1,34 @@
-import getRandomNumber from '../utilites.js';
+import { getRandomNumber } from '../utilites.js';
 import run from '../index.js';
 
-const rules = 'What is the result of the expression?';
+const rule = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
-const calc = (firstNumb, operator, secondNumb) => {
+const minRange = 0;
+const maxRange = 50;
+
+const calculate = (x, operator, y) => {
   switch (operator) {
     case '+':
-      return firstNumb + secondNumb;
+      return x + y;
     case '-':
-      return firstNumb - secondNumb;
+      return x - y;
     case '*':
-      return firstNumb * secondNumb;
+      return x * y;
     default:
       throw new Error(`Unkown operator: '${operator}'!`);
   }
 };
 
-const prepareGameData = () => {
-  const firstNumb = getRandomNumber(1, 50);
-  const secondNumb = getRandomNumber(1, 50);
+const getGameCalculate = () => {
+  const x = getRandomNumber(minRange, maxRange);
+  const y = getRandomNumber(minRange, maxRange);
   const randomOperator = operators[getRandomNumber(0, operators.length - 1)];
-  const question = `${firstNumb} ${randomOperator} ${secondNumb}`;
-  const rightAnswer = String(calc(firstNumb, randomOperator, secondNumb));
+  const question = `${x} ${randomOperator} ${y}`;
+  const rightAnswer = String(calculate(x, randomOperator, y));
   return [question, rightAnswer];
 };
 
 const startBrainCalc = () => {
-  run(rules, prepareGameData);
+  run(rule, getGameCalculate);
 };
 export default startBrainCalc;

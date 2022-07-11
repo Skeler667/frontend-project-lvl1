@@ -1,14 +1,19 @@
-import getRandomNumber from '../utilites.js';
+import { getRandomNumber } from '../utilites.js';
 import run from '../index.js';
 
-const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
+const minNumber = 1;
+const maxNumber = 10;
+
 const isEven = (number) => number % 2 === 0;
-const prepareGameData = () => {
-  const question = getRandomNumber(1, 10);
+
+const getGameEven = () => {
+  const question = getRandomNumber(minNumber, maxNumber);
   const rightAnswer = isEven(question) ? 'yes' : 'no';
   return [question, rightAnswer];
 };
+
 const startBrainEven = () => {
-  run(rules, prepareGameData);
+  run(rule, getGameEven);
 };
 export default startBrainEven;
