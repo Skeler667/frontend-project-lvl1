@@ -10,13 +10,17 @@ git clone https://github.com/Skeler667/frontend-project-lvl1
 ```
 
 2. Для установки введите 
-```make install```
+```
+make install
+```
 
 ### Brain Even
 
 #### Игра: "Проверка на чётность"
 
-`make brain-even`
+```
+make brain-even
+```
 
 Пользователь видит случайное число. Нужно ответить yes, если число чётное, или no — если нечётное.
 
@@ -28,7 +32,9 @@ git clone https://github.com/Skeler667/frontend-project-lvl1
 
 #### Игра: "Калькулятор"
 
-`make brain-calc`
+```
+make brain-calc
+```
 
 Пользователь видит случайное математическое выражение, например 35 + 16, которое нужно вычислить и записать правильный ответ.
 
@@ -40,7 +46,9 @@ git clone https://github.com/Skeler667/frontend-project-lvl1
 
 #### Игра "Наибольший общий делитель (НОД)"
 
-`make brain-gcd`
+```
+make brain-gcd
+```
 
 Пользователь видит два случайных числа, например, 25 50. Пользователь должен вычислить и ввести наибольший общий делитель этих чисел.
 
@@ -52,7 +60,9 @@ git clone https://github.com/Skeler667/frontend-project-lvl1
 
 #### Игра "Арифметическая прогрессия"
 
-`make brain-progression`
+```
+make brain-progression
+```
 
 Пользователь видит ряд чисел, образующий арифметическую прогрессию. Одно из чисел заменено двумя точками. Нужно определить это число.
 
@@ -64,7 +74,9 @@ git clone https://github.com/Skeler667/frontend-project-lvl1
 
 #### Игра "Простое ли число?"
 
-`make brain-prime`
+```
+make brain-prime
+```
 
 Пользователь видит число. Нужно ответить yes, если число простое, или no — если нет.
 
