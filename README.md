@@ -4,8 +4,12 @@
 
 ### Игры Brain Games.
 
-1. Склонируйте репозиторий ```git clone https://github.com/Skeler667/frontend-project-lvl1```
-2. Для установки введите ```make install```
+1. Склонируйте репозиторий
+```git clone https://github.com/Skeler667/frontend-project-lvl1
+```
+3. Для установки введите 
+```make install
+```
 
 ### Brain Even
 
