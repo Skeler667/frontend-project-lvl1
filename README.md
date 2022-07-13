@@ -5,9 +5,6 @@
 ### Игры Brain Games.
 
 1. Склонируйте репозиторий
-```git clone https://github.com/Skeler667/frontend-project-lvl1
-```
-
 ```
 git clone https://github.com/Skeler667/frontend-project-lvl1
 ```
