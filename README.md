@@ -8,8 +8,8 @@
 ```git clone https://github.com/Skeler667/frontend-project-lvl1
 ```
 
-```bash
-npm install
+```
+git clone https://github.com/Skeler667/frontend-project-lvl1
 ```
 
 2. Для установки введите 
