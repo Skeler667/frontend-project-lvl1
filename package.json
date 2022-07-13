@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "Установка репозитория `git clone https://github.com/Skeler667/frontend-project-lvl1` Установка `make install`",
+  "description": "simple set of math games",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
