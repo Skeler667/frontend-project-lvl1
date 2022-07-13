@@ -5,7 +5,13 @@
 ### Игры Brain Games.
 
 1. Склонируйте репозиторий
-```git clone https://github.com/Skeler667/frontend-project-lvl1```
+```git clone https://github.com/Skeler667/frontend-project-lvl1
+```
+
+```bash
+npm install
+```
+
 2. Для установки введите 
 ```make install```
 
