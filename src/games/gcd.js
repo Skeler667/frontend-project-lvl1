@@ -3,33 +3,31 @@ import run from '../index.js';
 
 const rule = 'Find the greatest common divisor of given numbers.';
 
-const findGCD = (num1, num2) => {
-  let result = 1;
-  if (num1 === num2) return num1;
-  const greatestNumber = num1 > num2 ? num1 : num2;
-  for (let i = greatestNumber - 1; i > 1; i -= 1) {
-    if (num1 % i === 0 && num2 % i === 0) {
-      result = i;
-      break;
+const getGCD = (firstNumber, secondNumber) => {
+  let x = firstNumber;
+  let y = secondNumber;
+
+  while (x !== 0 && y !== 0) {
+    if (x > y) {
+      x %= y;
+    } else {
+      y %= x;
     }
   }
-  return result;
+
+  return String(x + y);
 };
 
-const minNumberOne = 1;
-const maxNumberOne = 100;
-const minNumberTwo = 1;
-const maxNumberTwo = 100;
-
-const getGameGCD = () => {
-  const nubmerOne = getRandomNumber(minNumberOne, maxNumberOne);
-  const numberTwo = getRandomNumber(minNumberTwo, maxNumberTwo);
-  const question = `${nubmerOne} ${numberTwo}`;
-  const rightAnswer = findGCD(nubmerOne, numberTwo).toString();
-
-  return [question, rightAnswer];
+const getGCDRound = () => {
+  const firstNumber = getRandomNumber(1, 100);
+  const secondNumber = getRandomNumber(1, 100);
+  const answer = getGCD(firstNumber, secondNumber);
+  const question = `question: ${firstNumber} ${secondNumber}`;
+  return [question, answer];
+};
+const getBrainGcdRound = () => {
+  run(rule, getGCDRound);
 };
 
-const gameGcd = () => run(rule, getGameGCD);
+export default getBrainGcdRound;
 
-export default gameGcd;
