@@ -30,4 +30,3 @@ const getBrainGcdRound = () => {
 };
 
 export default getBrainGcdRound;
-
