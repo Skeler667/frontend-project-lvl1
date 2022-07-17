@@ -22,7 +22,7 @@ const getGCDRound = () => {
   const firstNumber = getRandomNumber(1, 100);
   const secondNumber = getRandomNumber(1, 100);
   const answer = getGCD(firstNumber, secondNumber);
-  const question = `question: ${firstNumber} ${secondNumber}`;
+  const question = `${firstNumber} ${secondNumber}`;
   return [question, answer];
 };
 const getBrainGcdRound = () => {
