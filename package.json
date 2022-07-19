@@ -26,12 +26,7 @@
     "brain-progression": "bin/brain-progression.js"
   },
   "dependencies": {
-    "brew": "^0.0.8",
-    "ci": "^2.2.0",
-    "pip": "^0.0.1",
-    "python": "^0.0.4",
-    "readline-sync": "^1.4.10",
-    "sudo": "^1.0.3"
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "eslint": "^8.18.0",

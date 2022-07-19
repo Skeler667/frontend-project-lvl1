@@ -19,16 +19,15 @@ const calculate = (x, operator, y) => {
   }
 };
 
-const getGameCalculate = () => {
+const generateRound = () => {
   const x = getRandomNumber(minRange, maxRange);
   const y = getRandomNumber(minRange, maxRange);
-  const randomOperator = operators[getRandomNumber(0, operators.length - 1)];
-  const question = `${x} ${randomOperator} ${y}`;
-  const rightAnswer = String(calculate(x, randomOperator, y));
+  const operator = operators[getRandomNumber(0, operators.length - 1)];
+  const question = `${x} ${operator} ${y}`;
+  const rightAnswer = String(calculate(x, operator, y));
   return [question, rightAnswer];
 };
 
-const startBrainCalc = () => {
-  run(rule, getGameCalculate);
+export default () => {
+  run(rule, generateRound);
 };
-export default startBrainCalc;
