@@ -6,25 +6,25 @@ const operators = ['+', '-', '*'];
 const minRange = 0;
 const maxRange = 50;
 
-const calculate = (operator, x, y) => {
-  switch (operator) {
+const calculate = (operator, number1, number2) => {
+  switch (operator){
     case '+':
-      return x + y;
+      return number1 + number2;
     case '-':
-      return x - y;
+      return number1 - number2;
     case '*':
-      return x * y;
+      return number1 * number2;
     default:
       throw new Error(`Unkown operator: '${operator}'!`);
-  }
+}
 };
 
 const generateRound = () => {
-  const x = getRandomNumber(minRange, maxRange);
-  const y = getRandomNumber(minRange, maxRange);
+  const number1 = getRandomNumber(minRange, maxRange);
+  const number2 = getRandomNumber(minRange, maxRange);
   const operator = operators[getRandomIndex(operators)];
-  const question = `${x} ${operator} ${y}`;
-  const rightAnswer = String(calculate(x, operator, y));
+  const question = `${number1} ${operator} ${number2}`;
+  const rightAnswer = String(calculate(operator, number1, number2));
   return [question, rightAnswer];
 };
 
