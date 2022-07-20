@@ -22,9 +22,9 @@ const calculate = (operator, x, y) => {
 const generateRound = () => {
   const x = getRandomNumber(minRange, maxRange);
   const y = getRandomNumber(minRange, maxRange);
-  const operator = operators(getRandomIndex(operators));
+  const operator = operators[getRandomIndex(operators)];
   const question = `${x} ${operator} ${y}`;
-  const rightAnswer = String(calculate(x, index, y));
+  const rightAnswer = String(calculate(x, operator, y));
   return [question, rightAnswer];
 };
 
