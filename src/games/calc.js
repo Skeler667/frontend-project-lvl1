@@ -6,14 +6,14 @@ const operators = ['+', '-', '*'];
 const minRange = 0;
 const maxRange = 50;
 
-const calculate = (operator, number1, number2) => {
+const calculate = (operator, x, y) => {
   switch (operator) {
     case '+':
-      return number1 + number2;
+      return x + y;
     case '-':
-      return number1 - number2;
+      return x - y;
     case '*':
-      return number1 * number2;
+      return x * y;
     default:
       throw new Error(`Unkown operator: '${operator}'!`);
   }

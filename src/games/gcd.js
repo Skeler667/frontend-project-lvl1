@@ -6,13 +6,7 @@ const maxRange = 50;
 
 const rule = 'Find the greatest common divisor of given numbers.';
 const calculateGCD = (firstNumber, secondNumber) => {
-  if (secondNumber === 0) {
-    return firstNumber;
-  }
-  if (secondNumber > firstNumber) {
-    return calculateGCD(secondNumber, firstNumber);
-  }
-  return calculateGCD(secondNumber, firstNumber % secondNumber);
+return secondNumber === 0 ? firstNumber : calculateGCD(secondNumber, firstNumber % secondNumber);
 };
 const generateRound = () => {
   const firstNumber = getRandomNumber(minRange, maxRange);
