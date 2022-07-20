@@ -1,4 +1,4 @@
-import { getRandomNumber } from '../utilites.js';
+import { getRandomNumber, getRandomIndex } from '../utilites.js';
 import run from '../index.js';
 
 const rule = 'What is the result of the expression?';
@@ -6,7 +6,7 @@ const operators = ['+', '-', '*'];
 const minRange = 0;
 const maxRange = 50;
 
-const calculate = (x, operator, y) => {
+const calculate = (operator, x, y) => {
   switch (operator) {
     case '+':
       return x + y;
@@ -22,9 +22,9 @@ const calculate = (x, operator, y) => {
 const generateRound = () => {
   const x = getRandomNumber(minRange, maxRange);
   const y = getRandomNumber(minRange, maxRange);
-  const operator = operators[getRandomNumber(0, operators.length - 1)];
+  const operator = operators(getRandomIndex(operators));
   const question = `${x} ${operator} ${y}`;
-  const rightAnswer = String(calculate(x, operator, y));
+  const rightAnswer = String(calculate(x, index, y));
   return [question, rightAnswer];
 };
 
