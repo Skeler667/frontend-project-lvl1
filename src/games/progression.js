@@ -10,12 +10,12 @@ const minStep = 1;
 const maxStep = 7;
 
 const createProgression = (start, step, length) => {
-    const progression = [];
-    for (let i = 0; i < length; i += 1) {
-      progression.push(i * step + start);
-    }
-    return progression;
-  };
+  const progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression.push(i * step + start);
+  }
+  return progression;
+};
 
 const generateRound = () => {
   const length = getRandomNumber(minLength, maxLength);
