@@ -1,4 +1,4 @@
-import { getRandomNumber } from '../utilites.js';
+import { getRandomNumber, getRandomIndex } from '../utilites.js';
 import run from '../index.js';
 
 const rule = 'What number is missing in the progression?';
@@ -9,18 +9,25 @@ const maxStart = 50;
 const minStep = 1;
 const maxStep = 7;
 
+const createProgression = (start, step, length) => {
+    const progression = [];
+    for (let i = 0; i < length; i += 1) {
+      progression.push(i * step + start);
+    }
+    return progression;
+  };
+
 const generateRound = () => {
-  const lenght = getRandomNumber(minLength, maxLength);
+  const length = getRandomNumber(minLength, maxLength);
   const step = getRandomNumber(minStep, maxStep);
-  const firstNumber = getRandomNumber(minStart, maxStart);
-  const result = [firstNumber];
-  const hiddenPosition = getRandomNumber(1, lenght);
-  for (let i = 0; i < lenght; i += 1) {
-    result.push(result[i] + step);
-  }
-  const rightAnswer = result[hiddenPosition];
-  result[hiddenPosition] = '..';
-  return [result.join(' '), String(rightAnswer)];
+  const start = getRandomNumber(minStart, maxStart);
+
+  const progression = createProgression(start, step, length);
+  const hiddenIndex = getRandomIndex(progression);
+  const answer = String(progression[hiddenIndex]);
+  progression[hiddenIndex] = '..';
+  const question = progression.join(' ');
+  return [question, answer];
 };
 
 export default () => {

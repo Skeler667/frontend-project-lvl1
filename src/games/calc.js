@@ -24,8 +24,8 @@ const generateRound = () => {
   const number2 = getRandomNumber(minRange, maxRange);
   const operator = operators[getRandomIndex(operators)];
   const question = `${number1} ${operator} ${number2}`;
-  const rightAnswer = String(calculate(operator, number1, number2));
-  return [question, rightAnswer];
+  const answer = String(calculate(operator, number1, number2));
+  return [question, answer];
 };
 
 export default () => {
