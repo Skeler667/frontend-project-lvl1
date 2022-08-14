@@ -16,3 +16,5 @@ publish:
 	npm publish --dry-run
 lint:
 	npx eslint .
+list:
+	node bin/brain-list.js
