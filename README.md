@@ -15,6 +15,14 @@ npm install
 npm link
 ```
 
+### Brain List
+
+### Список игры
+
+```
+brain-list
+```
+
 ### Brain Even
 
 #### Игра: "Проверка на чётность"
